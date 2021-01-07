@@ -82,7 +82,7 @@
                 android:layout_height="30dp"
                 android:background="@mipmap/emotion"
                 android:layout_centerVertical="true"/>
-            <cn.xie.imchat.view.MyEditTextView
+            <com.warden.imchat.view.MyEditTextView
                 android:layout_toRightOf="@+id/input_voice"
                 android:layout_toLeftOf="@+id/input_emotion"
                 android:layout_centerVertical="true"

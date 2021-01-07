@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.xie.imchat">
+    package="com.warden.imchat">
 
     <application
         android:allowBackup="true"
@@ -41,7 +41,7 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter android:priority="1000">
-                <action android:name="cn.xie.imchat.service.ChatService" />
+                <action android:name="com.warden.imchat.service.ChatService" />
             </intent-filter>
         </service>
     </application>
