@@ -71,7 +71,7 @@ import com.warden.imchat.utils.Util;
 public class XmppConnection extends XMPPTCPConnection {
     private static XmppConnection connection = null;
     private static int SERVER_PORT = 5222;
-    private static String SERVER_HOST = "115.29.55.141";
+    public static String SERVER_HOST = "115.29.55.141";
     private static String SERVER_NAME = "zxcs";
     private static ConnectionListener connectionListener;
     private DBManager dbManager;
@@ -1025,7 +1025,7 @@ public class XmppConnection extends XMPPTCPConnection {
             }
             NickNameIQ nickNameIQ = new NickNameIQ("query", "jabber:iq:roster", changeId, newNickName);
             nickNameIQ.setType(IQ.Type.set);
-            nickNameIQ.setStanzaId(loginId + "@xie-pc/" + changeId);
+            nickNameIQ.setStanzaId(loginId + "@115.29.55.141/" + changeId);
             getConnection(context).sendStanza(nickNameIQ);
             return true;
         } catch (SmackException.NotConnectedException | InterruptedException e) {

@@ -44,7 +44,7 @@ public class FriendApplyAdapter extends RecyclerView.Adapter<FriendApplyAdapter.
         final ChatMessage chatMessage = applyList.get(position);
         holder.applyTime.setText(Util.setChatMessageDate(chatMessage.getSendtime(),mContext));
         holder.applyName.setText(chatMessage.getSendName());
-        final String applyJid = chatMessage.getSendName()+"@xie-pc";
+        final String applyJid = chatMessage.getSendName()+"@" + XmppConnection.SERVER_HOST;
         //同意好友申请
         holder.accept.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -39,6 +39,7 @@ import com.warden.imchat.domain.LoginUser;
 import com.warden.imchat.utils.AddMessageDate;
 import com.warden.imchat.utils.AddMessageInfo;
 import com.warden.imchat.utils.DBManager;
+import com.warden.imchat.utils.L;
 import com.warden.imchat.utils.MyMessage;
 import com.warden.imchat.utils.Util;
 import com.warden.imchat.view.MyEditTextView;
@@ -71,7 +72,7 @@ public class ChatActivity extends BaseActivity {
         loginUser = Util.getLoginInfo(context);
         if (type.equals("chat")){
             //创建个人聊天窗口
-            String sendJid = sendName + "@xie-pc";
+            String sendJid = sendName + "@" + XmppConnection.SERVER_HOST;
             chat = XmppConnection.getInstance(context).getFriendChat(context,sendJid);
         }else {
             //创建聊天室窗口
@@ -277,6 +278,7 @@ public class ChatActivity extends BaseActivity {
         //添加扩展到message
         Message message = new Message();
         //message.setType(Message.Type.chat);
+        L.e(myMessage.data.toString());
         message.setBody(myMessage.data.toString());
         //message.addExtension(addMessageDate);
         //message.addExtension(addMessageInfo);
